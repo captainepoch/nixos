@@ -31,9 +31,9 @@
 
     fontconfig = {
       defaultFonts = {
-        sansSerif = [ "Liberation Sans Regular" ];
-        serif = [ "Liberation Serif Regular" ];
-        monospace = [ "Liberation Mono Regular" ];
+        sansSerif = [ "Liberation Sans" ];
+        serif = [ "Liberation Serif" ];
+        monospace = [ "Liberation Mono" ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
