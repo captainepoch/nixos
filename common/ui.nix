@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     ark
+    libsForQt5.okular
     libreoffice
     # Keyring
     gnome3.gnome-keyring

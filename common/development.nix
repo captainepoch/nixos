@@ -2,8 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
+    android-studio
+    gcc_latest 
+    gdb
+    gnumake
     go
-    jetbrains-toolbox
+    lldb
     sublime
     #vscodium
     (python3.withPackages (ps: with ps; [tkinter scapy nose pytest autoflake python-lsp-server pylint yapf importmagic virtualenv]))
