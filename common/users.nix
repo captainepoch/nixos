@@ -29,6 +29,7 @@
       pavucontrol
       pinentry-gtk2
       qbittorrent
+      senpai
       telegram-desktop
     ];
   };
