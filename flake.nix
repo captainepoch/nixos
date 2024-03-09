@@ -17,6 +17,7 @@
           ./common/boot.nix
           ./common/core.nix
           ./common/development.nix
+          ./common/latex.nix
           ./common/network.nix
           ./common/ui.nix
           ./common/users.nix
