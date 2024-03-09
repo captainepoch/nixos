@@ -1,3 +1,9 @@
-# nixos
+# NixOS
 
-[WIP] My NixOS configuration.
+My NixOS configuration.
+
+## License
+
+[MIT][license].
+
+[license]: ./COPYING
