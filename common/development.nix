@@ -33,7 +33,6 @@
     go
     lldb
     nixfmt
-    sublime
 
     (python3.withPackages (ps:
       with ps; [
