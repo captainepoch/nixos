@@ -16,8 +16,11 @@
       gimp
       gopass
       htop
+      isync
       keepassxc
+      librewolf
       libsecret
+      msmtp
       mumble
       neomutt
       neovim
