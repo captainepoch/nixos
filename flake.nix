@@ -1,9 +1,7 @@
 {
   description = "Adolph's NixOS setup";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-  };
+  inputs = { nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11"; };
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {

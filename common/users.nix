@@ -9,7 +9,7 @@
     uid = 1000;
     extraGroups = [ "audio" "networkmanager" "wheel" ];
     shell = "${pkgs.zsh}/bin/zsh";
-    packages = with pkgs; [ 
+    packages = with pkgs; [
       calibre
       element-desktop
       firefox

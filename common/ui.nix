@@ -49,7 +49,7 @@
   # XFCE and xserver config
   services.xserver = {
     enable = true;
-    
+
     xkb.layout = "es";
 
     deviceSection = ''

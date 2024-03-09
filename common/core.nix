@@ -43,10 +43,12 @@
       LC_TELEPHONE = "es_ES.UTF-8";
       LC_TIME = "es_ES.UTF-8";
     };
-    supportedLocales = [ "C.UTF-8/UTF-8"
-                         "es_ES.UTF-8/UTF-8"
-                         "en_US.UTF-8/UTF-8"
-                         "en_GB.UTF-8/UTF-8" ];
+    supportedLocales = [
+      "C.UTF-8/UTF-8"
+      "es_ES.UTF-8/UTF-8"
+      "en_US.UTF-8/UTF-8"
+      "en_GB.UTF-8/UTF-8"
+    ];
   };
 
   # Optimize the nix store by default for new derivations

@@ -1,7 +1,5 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    android-udev-rules
-  ];
+  environment.systemPackages = with pkgs; [ android-udev-rules ];
 }
