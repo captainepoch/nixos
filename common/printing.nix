@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     xsane
   ];
 
