@@ -1,18 +1,11 @@
 { config, lib, pkgs, ... }:
 
-{
+let
+  androidStudioPackages = pkgs.recurseIntoAttrs
+    (pkgs.callPackage ../external/editors/android-studio { });
+  android-studio = androidStudioPackages.stable;
+in {
   nixpkgs.config.packageOverrides = pkgs: {
-    # Android Studio
-    android-studio = pkgs.android-studio.overrideAttrs (oldAttrs: {
-      # "Android Studio Iguana (2023.2.1) [Feb. 29, 2024]"
-      version = "2023.2.1.23";
-      src = pkgs.fetchurl {
-        url =
-          "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2023.2.1.23/android-studio-2023.2.1.23-linux.tar.gz";
-        sha256 = "0wx0slpya6d389aiy4lhgryxazx37la6hrgb1lsxq741ra08yrhv";
-      };
-    });
-
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
       version = "1.87.1.24068"; # Latest GitHub release
