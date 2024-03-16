@@ -23,6 +23,7 @@
           ./floppy/configuration.nix
           ./floppy/hardware-configuration.nix
           ./floppy/amdgpu.nix
+          ./floppy/android-kvm.nix
           ./floppy/zenpower.nix
           ./floppy/windows.nix
         ];

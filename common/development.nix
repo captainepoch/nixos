@@ -25,6 +25,7 @@ in {
     gnumake
     go
     lazygit
+    libvirt
     lldb
     nixfmt
     scrcpy
