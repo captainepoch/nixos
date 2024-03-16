@@ -24,8 +24,10 @@ in {
     gdb
     gnumake
     go
+    lazygit
     lldb
     nixfmt
+    scrcpy
 
     (python3.withPackages (ps:
       with ps; [
