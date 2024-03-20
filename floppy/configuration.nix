@@ -1,4 +1,4 @@
-{ config, pkgs, options, ... }:
+{ config, lib, pkgs, options, ... }:
 
 {
   # Networking config
@@ -17,6 +17,9 @@
 
   # Supposedly better for the SSD.
   #fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
+
+  # Disable SWAP
+  swapDevices = lib.mkForce [ ];
 
   system.stateVersion = "23.11";
 }
