@@ -16,10 +16,7 @@
   environment.variables.EDITOR = "nano";
 
   # Supposedly better for the SSD.
-  #fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
-
-  # Disable SWAP
-  swapDevices = lib.mkForce [ ];
+  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
   system.stateVersion = "23.11";
 }
