@@ -8,11 +8,11 @@ in {
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.87.2.24072"; # Latest GitHub release
+      version = "1.88.0.24096"; # Latest GitHub release
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.87.2.24072/VSCodium-linux-x64-1.87.2.24072.tar.gz";
-        hash = "sha256-44D0vK1D1HYPOz2fpC5lQ1d7bHwzO8uW+KEkBZemwcs=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.88.0.24096/VSCodium-linux-x64-1.88.0.24096.tar.gz";
+        hash = "sha256-3mgZTHTk0D1L7i1apHf5RFw4GiDxoQHiCS3X9wwnM6k=";
       };
     });
   };
