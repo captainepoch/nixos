@@ -15,10 +15,14 @@ in {
         hash = "sha256-dOVCh7ksdaYlinYImrSCxybNyUnSJfc5x6JFrURYb9g=";
       };
     });
+
+    android-tools =
+      pkgs.android-tools.overrideAttrs (oldAttrs: { version = "34.0.5"; });
   };
 
   environment.systemPackages = with pkgs; [
     android-studio
+    android-tools
     astyle
     gcc_latest
     gdb
