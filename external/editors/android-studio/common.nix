@@ -2,11 +2,13 @@
 
 { alsa-lib, bash, buildFHSEnv, cacert, coreutils, dbus, e2fsprogs, expat
 , fetchurl, findutils, file, fontsConf, git, glxinfo, gnugrep, gnused, gnutar
-, gtk2, gnome_vfs, glib, GConf, gzip, fontconfig, freetype, libpulseaudio, libGL
-, libuuid, libX11, libxcb, libXcomposite, libXcursor, libXdamage, libXext
-, libXfixes, libXi, libXrandr, libXrender, libXtst, makeWrapper, ncurses5, nspr
-, nss_latest, pciutils, pkgsi686Linux, ps, setxkbmap, lib, stdenv, systemd
-, unzip, usbutils, which, runCommand, xkeyboard_config, zlib, makeDesktopItem
+, gtk2, gnome_vfs, glib, GConf, gzip, fontconfig, freetype, libbsd
+, libpulseaudio, libGL, libdrm, libpng, libuuid, libX11, libxcb, libxkbcommon
+, xcbutilwm, xcbutilrenderutil, xcbutilkeysyms, xcbutilimage, xcbutilcursor
+, libxkbfile, libXcomposite, libXcursor, libXdamage, libXext, libXfixes, libXi
+, libXrandr, libXrender, libXtst, makeWrapper, ncurses5, nspr, nss_latest
+, pciutils, pkgsi686Linux, ps, setxkbmap, lib, stdenv, systemd, unzip, usbutils
+, which, runCommand, xkeyboard_config, xorg, zlib, makeDesktopItem
 , tiling_wm # if we are using a tiling wm, need to set _JAVA_AWT_WM_NONREPARENTING in wrapper
 }:
 
@@ -91,15 +93,27 @@ let
             alsa-lib
             dbus
             expat
+            libbsd
             libpulseaudio
             libuuid
             libX11
             libxcb
+            libxkbcommon
+            xcbutilwm
+            xcbutilrenderutil
+            xcbutilkeysyms
+            xcbutilimage
+            xcbutilcursor
+            xorg.libICE
+            xorg.libSM
+            libxkbfile
             libXcomposite
             libXcursor
             libXdamage
             libXfixes
             libGL
+            libdrm
+            libpng
             nspr
             nss_latest
             systemd
