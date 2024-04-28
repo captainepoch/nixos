@@ -191,9 +191,9 @@ in runCommand drvName {
     platforms = [ "x86_64-linux" ];
     maintainers = with maintainers;
       rec {
-        stable = [ alapshin msfjarvis ];
-        beta = [ alapshin msfjarvis ];
-        canary = [ alapshin msfjarvis ];
+        stable = [ alapshin ];
+        beta = [ alapshin ];
+        canary = [ alapshin ];
         dev = canary;
       }."${channel}";
     mainProgram = pname;
