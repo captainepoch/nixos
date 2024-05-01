@@ -73,19 +73,19 @@ in {
           {
             name = "language-gettext";
             publisher = "mrorz";
-            version = "0.4.0";
+            version = "0.5.0";
             sha256 = "sha256-haplFz1jWPTvRZ37nkSgqU3PQC3ewXYI0lp05z/cBOs=";
           }
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2023.9.13201008";
+            version = "2024.1.10961014";
             sha256 = "sha256-1SQifs2ST3o6VqUOewHxOvxYheyHov6KDteict4n9Fc=";
           }
           {
             name = "flake8";
             publisher = "ms-python";
-            version = "2023.13.10601010";
+            version = "2023.13.10681010";
             sha256 = "sha256-BddTIwVc1itee4VbpVuqLX3Re07dr+69RsvYlTO966o=";
           }
           {
