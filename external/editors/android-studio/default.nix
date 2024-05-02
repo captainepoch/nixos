@@ -9,8 +9,8 @@ let
       inherit tiling_wm;
     };
   stableVersion = {
-    version = "2023.2.1.25"; # "Android Studio Iguana | 2023.2.1 Patch 2"
-    sha256Hash = "sha256-zWPq1GfckqCP9rNpXAHVfoApdvxkrN3NMc1qJCf/obw=";
+    version = "2023.3.1.18"; # "Android Studio Jellyfish | 2023.3.1.18"
+    sha256Hash = "sha256-Rqm0oxGCCywYQREK/6KG1lZlrJ+JcP2enrkDw9eqQ24=";
   };
   betaVersion = {
     version = "2023.3.1.17"; # "Android Studio Jellyfish | 2023.3.1.1 RC 2"
