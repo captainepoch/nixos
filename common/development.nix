@@ -12,7 +12,7 @@ in {
       src = pkgs.fetchurl {
         url =
           "https://github.com/VSCodium/vscodium/releases/download/1.89.1.24130/VSCodium-linux-x64-1.89.1.24130.tar.gz";
-        hash = "sha256-dOVCh7ksdaYlinYImrSCxybNyUnSJfc5x6JFrURYb9g=";
+        hash = "sha256-gY9nWf3inosYj2U1t+7sXmlKC4mHGTjGNJZCRtHirDU=";
       };
     });
 
