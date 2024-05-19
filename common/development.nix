@@ -8,10 +8,10 @@ in {
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.88.1.24104"; # Latest GitHub release
+      version = "1.89.1.24130"; # Latest GitHub release
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.88.1.24104/VSCodium-linux-x64-1.88.1.24104.tar.gz";
+          "https://github.com/VSCodium/vscodium/releases/download/1.89.1.24130/VSCodium-linux-x64-1.89.1.24130.tar.gz";
         hash = "sha256-dOVCh7ksdaYlinYImrSCxybNyUnSJfc5x6JFrURYb9g=";
       };
     });
@@ -24,6 +24,7 @@ in {
     android-studio
     android-tools
     astyle
+    emacs
     gcc_latest
     gdb
     gnumake
@@ -74,19 +75,19 @@ in {
             name = "language-gettext";
             publisher = "mrorz";
             version = "0.5.0";
-            sha256 = "sha256-haplFz1jWPTvRZ37nkSgqU3PQC3ewXYI0lp05z/cBOs=";
+            sha256 = "sha256-1hdT2Fai0o48ojNqsjW+McokD9Nzt2By3vzhGUtgaeA=";
           }
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2024.1.10961014";
-            sha256 = "sha256-1SQifs2ST3o6VqUOewHxOvxYheyHov6KDteict4n9Fc=";
+            version = "2024.1.11371013";
+            sha256 = "sha256-LdcCbAEd+UedCYmhMxM9Ok0QalCT7HqC8iEdHySDADQ=";
           }
           {
             name = "flake8";
             publisher = "ms-python";
-            version = "2023.13.10681010";
-            sha256 = "sha256-BddTIwVc1itee4VbpVuqLX3Re07dr+69RsvYlTO966o=";
+            version = "2023.13.11371021";
+            sha256 = "sha256-z0DjNpd9oHmVwFAztuvUmSQoSgBXcqAYFIWYARUMgWQ=";
           }
           {
             name = "jinjahtml";
