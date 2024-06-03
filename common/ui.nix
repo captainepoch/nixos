@@ -12,7 +12,7 @@
     matcha-gtk-theme
     papirus-icon-theme
     # GPG stuff
-    pinentry-gtk2
+    pinentry-gnome3
     # XFCE
     xfce.thunar-archive-plugin
     xfce.thunar-volman
@@ -89,7 +89,7 @@
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
-      pinentryFlavor = "gtk2";
+      pinentryPackage = pkgs.pinentry-gnome3;
     };
   };
 }
