@@ -15,6 +15,7 @@
           ./common/boot.nix
           ./common/core.nix
           ./common/development.nix
+          ./common/games.nix
           ./common/latex.nix
           ./common/network.nix
           ./common/ui.nix
