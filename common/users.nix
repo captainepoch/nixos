@@ -26,6 +26,7 @@
       neovim
       nextcloud-client
       obs-studio
+      obsidian
       pavucontrol
       pinentry-gtk2
       qbittorrent
