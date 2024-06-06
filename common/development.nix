@@ -32,7 +32,7 @@ in {
     lazygit
     libvirt
     lldb
-    nixfmt
+    nixfmt-classic
     scrcpy
 
     (python3.withPackages (ps:
