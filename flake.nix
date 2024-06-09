@@ -20,7 +20,6 @@
           ./common/network.nix
           ./common/ui.nix
           ./common/users.nix
-          ./common/piper/piper.nix
 
           ./floppy/configuration.nix
           ./floppy/hardware-configuration.nix

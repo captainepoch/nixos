@@ -8,11 +8,11 @@ in {
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.89.1.24130"; # Latest GitHub release
+      version = "1.90.0.24158"; # Latest GitHub release
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.89.1.24130/VSCodium-linux-x64-1.89.1.24130.tar.gz";
-        hash = "sha256-gY9nWf3inosYj2U1t+7sXmlKC4mHGTjGNJZCRtHirDU=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.90.0.24158/VSCodium-linux-x64-1.90.0.24158.tar.gz";
+        hash = "sha256-a3t+AzO0Vcd626emxPfB0cATjXF7plIWrktbDZvar/4=";
       };
     });
 
@@ -24,6 +24,7 @@ in {
     android-studio
     android-tools
     astyle
+    direnv
     emacs
     gcc_latest
     gdb
