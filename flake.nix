@@ -18,6 +18,7 @@
           ./common/games.nix
           ./common/latex.nix
           ./common/network.nix
+          ./common/photography.nix
           ./common/ui.nix
           ./common/users.nix
 
