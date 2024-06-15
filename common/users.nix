@@ -10,8 +10,10 @@
     extraGroups = [ "audio" "networkmanager" "wheel" "plugdev" ];
     shell = "${pkgs.zsh}/bin/zsh";
     packages = with pkgs; [
+      brave
       calibre
       element-desktop
+      exiftool
       firefox
       gimp
       gopass

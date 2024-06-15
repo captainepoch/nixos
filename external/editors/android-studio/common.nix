@@ -168,7 +168,7 @@ in runCommand drvName {
   allowSubstitutes = false;
   passthru = { unwrapped = androidStudio; };
   meta = with lib; {
-    description = "The Official IDE for Android (${channel} channel)";
+    description = "Official IDE for Android (${channel} channel)";
     longDescription = ''
       Android Studio is the official IDE for Android app development, based on
       IntelliJ IDEA.
