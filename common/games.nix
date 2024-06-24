@@ -4,7 +4,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "steam" "steam-original" "steam-run" ];
 
-  environment.systemPackages = with pkgs; [ lutris ];
+  environment.systemPackages = with pkgs; [ lutris xboxdrv xorg.xinput ];
 
   programs.steam = {
     enable = true;

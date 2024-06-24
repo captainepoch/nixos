@@ -2,7 +2,7 @@
 
 {
   nixpkgs.config.packageOverrides = pkgs: {
-    darktable = pkgs.darktable.overrideAttrs (oldAttrs: { version = "4.6.1"; });
+    darktable = pkgs.darktable.overrideAttrs (oldAttrs: { version = "4.8.0"; });
   };
 
   hardware.opengl.extraPackages = with pkgs; [ rocmPackages.clr.icd ];
