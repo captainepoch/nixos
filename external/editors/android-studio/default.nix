@@ -1,10 +1,9 @@
-{ callPackage, makeFontsConf, gnome2, buildFHSEnv, tiling_wm ? false }:
+{ callPackage, makeFontsConf, buildFHSEnv, tiling_wm ? false }:
 
 let
   mkStudio = opts:
     callPackage (import ./common.nix opts) {
       fontsConf = makeFontsConf { fontDirectories = [ ]; };
-      inherit (gnome2) GConf gnome_vfs;
       inherit buildFHSEnv;
       inherit tiling_wm;
     };

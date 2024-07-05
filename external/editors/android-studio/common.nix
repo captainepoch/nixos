@@ -2,13 +2,13 @@
 
 { alsa-lib, runtimeShell, buildFHSEnv, cacert, coreutils, dbus, e2fsprogs, expat
 , fetchurl, findutils, file, fontsConf, git, glxinfo, gnugrep, gnused, gnutar
-, gtk2, gnome_vfs, glib, GConf, gzip, fontconfig, freetype, libbsd
-, libpulseaudio, libGL, libdrm, libpng, libuuid, libX11, libxcb, libxkbcommon
-, xcbutilwm, xcbutilrenderutil, xcbutilkeysyms, xcbutilimage, xcbutilcursor
-, libxkbfile, libXcomposite, libXcursor, libXdamage, libXext, libXfixes, libXi
-, libXrandr, libXrender, libXtst, makeWrapper, ncurses5, nspr, nss_latest
-, pciutils, pkgsi686Linux, ps, setxkbmap, lib, stdenv, systemd, unzip, usbutils
-, which, runCommand, xkeyboard_config, xorg, zlib, makeDesktopItem
+, gtk2, glib, gzip, fontconfig, freetype, libbsd, libpulseaudio, libGL, libdrm
+, libpng, libuuid, libX11, libxcb, libxkbcommon, xcbutilwm, xcbutilrenderutil
+, xcbutilkeysyms, xcbutilimage, xcbutilcursor, libxkbfile, libXcomposite
+, libXcursor, libXdamage, libXext, libXfixes, libXi, libXrandr, libXrender
+, libXtst, makeWrapper, ncurses5, nspr, nss_latest, pciutils, pkgsi686Linux, ps
+, setxkbmap, lib, stdenv, systemd, unzip, usbutils, which, runCommand
+, xkeyboard_config, xorg, zlib, makeDesktopItem
 , tiling_wm # if we are using a tiling wm, need to set _JAVA_AWT_WM_NONREPARENTING in wrapper
 , androidenv }:
 
@@ -120,9 +120,7 @@ let
 
             # For GTKLookAndFeel
             gtk2
-            gnome_vfs
             glib
-            GConf
           ]
         }"
 
@@ -204,10 +202,12 @@ let
         withSdk = androidSdk:
           mkAndroidStudioWrapper { inherit androidStudio androidSdk; };
       in {
+        inherit version;
         unwrapped = androidStudio;
         full = withSdk androidenv.androidPkgs.androidsdk;
         inherit withSdk;
         sdk = androidSdk;
+        updateScript = [ ./update.sh "${channel}" ];
       };
       meta = {
         description = "Official IDE for Android (${channel} channel)";
