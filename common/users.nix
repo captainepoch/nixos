@@ -14,7 +14,6 @@
       calibre
       element-desktop
       exiftool
-      firefox
       gimp
       gopass
       htop
