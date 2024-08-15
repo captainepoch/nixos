@@ -14,7 +14,7 @@
       useOSProber = true;
       configurationLimit = 5;
     };
-    loader.timeout = 20;
+    loader.timeout = 5;
 
     initrd.systemd.enable = true;
 

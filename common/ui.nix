@@ -22,12 +22,7 @@
 
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [
-      fira-code
-      liberation_ttf
-      noto-fonts
-      noto-fonts-emoji
-    ];
+    packages = with pkgs; [ liberation_ttf noto-fonts noto-fonts-emoji ];
 
     fontconfig = {
       defaultFonts = {

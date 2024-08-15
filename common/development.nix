@@ -8,11 +8,11 @@ in {
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.90.2.24171"; # Latest GitHub release
+      version = "1.92.1.24225"; # Latest GitHub release
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.90.2.24171/VSCodium-linux-x64-1.90.2.24171.tar.gz";
-        hash = "sha256-GU8KuTP/ftK2+4fdhUhbQTkJcUyLA+gbauhQQYjaMQc=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.92.1.24225/VSCodium-linux-x64-1.92.1.24225.tar.gz";
+        hash = "sha256-Q1zrZgRFkfVrQ0PwdKN62+JQutJjMs0K+v6cMNeCOfA=";
       };
     });
 
@@ -87,8 +87,8 @@ in {
           {
             name = "flake8";
             publisher = "ms-python";
-            version = "2023.13.11371021";
-            sha256 = "sha256-z0DjNpd9oHmVwFAztuvUmSQoSgBXcqAYFIWYARUMgWQ=";
+            version = "2023.13.11511011";
+            sha256 = "sha256-nIP99QnM9PL1LVezN1jCNf7odqwXmgnr2yoq0/u8x58=";
           }
           {
             name = "jinjahtml";
@@ -99,8 +99,8 @@ in {
           {
             name = "sass-indented";
             publisher = "syler";
-            version = "1.8.29";
-            sha256 = "sha256-6RYI6Gu5UePTicmKm85ZnN5C19hQASc/t5lHWoKjpYk=";
+            version = "1.8.30";
+            sha256 = "sha256-g11s2hdu5/6+tDrxCNNzchJwj52665NPZovkZdOBZhA=";
           }
         ];
     })

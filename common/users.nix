@@ -18,7 +18,6 @@
       gopass
       htop
       isync
-      keepassxc
       librewolf
       libsecret
       msmtp
