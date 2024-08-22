@@ -2,12 +2,7 @@
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "fuse"
-      "steam"
-      "steam-original"
-      "steam-run"
-    ];
+    builtins.elem (lib.getName pkg) [ "steam" "steam-original" "steam-run" ];
 
   environment.systemPackages = with pkgs; [ lutris xboxdrv xorg.xinput ];
 
