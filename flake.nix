@@ -12,6 +12,7 @@
 
         modules = [
           ./common/android.nix
+          ./common/android-dev.nix
           ./common/boot.nix
           ./common/core.nix
           ./common/development.nix
@@ -20,6 +21,7 @@
           ./common/network.nix
           ./common/nix-settings.nix
           ./common/photography.nix
+          ./common/printing.nix
           ./common/ui.nix
           ./common/users.nix
 

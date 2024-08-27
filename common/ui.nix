@@ -5,6 +5,7 @@
     ark
     libsForQt5.okular
     libreoffice
+    xarchiver
     # Keyring
     gnome3.gnome-keyring
     libgnome-keyring

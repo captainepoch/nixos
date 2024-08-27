@@ -1,10 +1,6 @@
 { config, lib, pkgs, ... }:
 
-let
-  androidStudioPackages = pkgs.recurseIntoAttrs
-    (pkgs.callPackage ../external/editors/android-studio { });
-  android-studio = androidStudioPackages.stable;
-in {
+{
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
@@ -15,14 +11,9 @@ in {
         hash = "sha256-5aOqIJYWqecdVrnKCtT9nD35BYvEzU9nqogFgyW2reE=";
       };
     });
-
-    android-tools =
-      pkgs.android-tools.overrideAttrs (oldAttrs: { version = "34.0.5"; });
   };
 
   environment.systemPackages = with pkgs; [
-    android-studio
-    android-tools
     astyle
     direnv
     emacs
@@ -34,7 +25,6 @@ in {
     libvirt
     lldb
     nixfmt-classic
-    scrcpy
 
     (python3.withPackages (ps:
       with ps; [
@@ -62,33 +52,21 @@ in {
           golang.go
           ms-python.isort
           ms-python.python
-          ms-vscode.cpptools
+          # ms-vscode.cpptools
           ms-vscode-remote.remote-containers
           stkb.rewrap
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
-            name = "vscode-astyle";
-            publisher = "chiehyu";
-            version = "0.9.0";
-            sha256 = "sha256-eEuqMQ9+N91ByuLPAoLvcg7m9MEkENP3hsKVyskrSZQ=";
-          }
-          {
-            name = "language-gettext";
-            publisher = "mrorz";
-            version = "0.5.0";
-            sha256 = "sha256-1hdT2Fai0o48ojNqsjW+McokD9Nzt2By3vzhGUtgaeA=";
-          }
-          {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2024.1.11371013";
-            sha256 = "sha256-LdcCbAEd+UedCYmhMxM9Ok0QalCT7HqC8iEdHySDADQ=";
+            version = "2024.1.11501016";
+            sha256 = "sha256-1BYndKdICsHqxfe3ghJIpPrCTswYV3Ij+4U4fdICODE=";
           }
           {
             name = "flake8";
             publisher = "ms-python";
-            version = "2023.13.11511011";
-            sha256 = "sha256-nIP99QnM9PL1LVezN1jCNf7odqwXmgnr2yoq0/u8x58=";
+            version = "2023.13.12291011";
+            sha256 = "sha256-xhAnRpgHiXb4DiY+tKRYvYMRWD8jHeq9lulqfLZ7Yq0=";
           }
           {
             name = "jinjahtml";
@@ -97,10 +75,28 @@ in {
             sha256 = "sha256-wADL3AkLfT2N9io8h6XYgceKyltJCz5ZHZhB14ipqpM=";
           }
           {
+            name = "language-gettext";
+            publisher = "mrorz";
+            version = "0.5.0";
+            sha256 = "sha256-1hdT2Fai0o48ojNqsjW+McokD9Nzt2By3vzhGUtgaeA=";
+          }
+          {
             name = "sass-indented";
             publisher = "syler";
-            version = "1.8.30";
-            sha256 = "sha256-g11s2hdu5/6+tDrxCNNzchJwj52665NPZovkZdOBZhA=";
+            version = "1.8.31";
+            sha256 = "sha256-TmRPpDJsuJETOKIjTsHzy4LOPTOAg4q0DunLyv6FxhQ=";
+          }
+          {
+            name = "vscode-astyle";
+            publisher = "chiehyu";
+            version = "0.9.0";
+            sha256 = "sha256-eEuqMQ9+N91ByuLPAoLvcg7m9MEkENP3hsKVyskrSZQ=";
+          }
+          {
+            name = "vscode-clangd";
+            publisher = "llvm-vs-code-extensions";
+            version = "0.1.29";
+            sha256 = "sha256-ldvjDwWmOI2BXr4VjqsSMbA1nv5rc6a9bveO8fm8ee8=";
           }
         ];
     })
