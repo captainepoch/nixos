@@ -17,6 +17,7 @@
     astyle
     direnv
     emacs
+    emacs-all-the-icons-fonts
     gcc_latest
     gdb
     gnumake
@@ -24,6 +25,7 @@
     lazygit
     libvirt
     lldb
+    nix-direnv
     nixfmt-classic
 
     (python3.withPackages (ps:
