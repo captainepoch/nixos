@@ -8,9 +8,11 @@
 , libXcomposite, libXcursor, libXdamage, libXext, libXfixes, libXi, libXrandr
 , libXrender, libXtst, makeWrapper, ncurses5, nspr, nss_latest, pciutils
 , pkgsi686Linux, ps, setxkbmap, lib, stdenv, systemd, unzip, usbutils, which
-, runCommand, xkeyboard_config, xorg, zlib, makeDesktopItem
+, runCommand, wayland, xkeyboard_config, xorg, zlib, makeDesktopItem
 , tiling_wm # if we are using a tiling wm, need to set _JAVA_AWT_WM_NONREPARENTING in wrapper
-, androidenv }:
+, androidenv
+
+, forceWayland ? false }:
 
 let
   drvName = "android-studio-${channel}-${version}";
@@ -121,8 +123,15 @@ let
             # For GTKLookAndFeel
             gtk2
             glib
+
+            # For wayland support
+            wayland
           ]
-        }"
+        }" \
+        ${
+          lib.optionalString forceWayland
+          "--add-flags -Dawt.toolkit.name=WLToolkit"
+        }
 
       # AS launches LLDBFrontend with a custom LD_LIBRARY_PATH
       wrapProgram $(find $out -name LLDBFrontend) --prefix LD_LIBRARY_PATH : "${
