@@ -29,9 +29,9 @@
       obsidian
       pavucontrol
       pinentry-gtk2
-      qbittorrent
       senpai
       telegram-desktop
+      transmission_4
     ];
   };
 }
