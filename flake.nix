@@ -13,6 +13,7 @@
         modules = [
           ./common/android.nix
           ./common/android-dev.nix
+          ./common/bluetooth.nix
           ./common/boot.nix
           ./common/core.nix
           ./common/development.nix
