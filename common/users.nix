@@ -31,7 +31,9 @@
       pinentry-gtk2
       senpai
       telegram-desktop
-      transmission_4
+      transmission_4-qt
+      unzip
+      zip
     ];
   };
 }
