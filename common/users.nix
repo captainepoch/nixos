@@ -1,4 +1,4 @@
-{ config, pkgs, options, ... }:
+{ config, pkgs, lib, options, ... }:
 
 {
   programs.zsh.enable = true;
@@ -25,7 +25,6 @@
       neomutt
       neovim
       nextcloud-client
-      obs-studio
       obsidian
       pavucontrol
       pinentry-gtk2

@@ -13,6 +13,7 @@
         modules = [
           ./common/android.nix
           ./common/android-dev.nix
+          ./common/amdcpu.nix
           ./common/bluetooth.nix
           ./common/boot.nix
           ./common/core.nix
@@ -23,6 +24,7 @@
           ./common/nix-settings.nix
           ./common/photography.nix
           ./common/printing.nix
+          ./common/streaming.nix
           ./common/ui.nix
           ./common/users.nix
 
