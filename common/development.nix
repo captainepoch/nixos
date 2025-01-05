@@ -32,7 +32,6 @@
       with ps; [
         tkinter
         scapy
-        nose
         pytest
         autoflake
         python-lsp-server

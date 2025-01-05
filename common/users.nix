@@ -18,7 +18,6 @@
       gopass
       htop
       isync
-      librewolf
       libsecret
       msmtp
       mumble
@@ -32,6 +31,7 @@
       telegram-desktop
       transmission_4-qt
       unzip
+      winbox4
       zip
     ];
   };

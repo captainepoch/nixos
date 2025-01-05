@@ -7,7 +7,7 @@
     libreoffice
     xarchiver
     # Keyring
-    gnome3.gnome-keyring
+    gnome-keyring
     libgnome-keyring
     # GTK Theme & Icons
     matcha-gtk-theme
@@ -38,8 +38,8 @@
   # GNOME Keyring
   services.gnome = {
     gnome-keyring.enable = true;
-    tracker.enable = false;
-    tracker-miners.enable = false;
+    tinysparql.enable = false;
+    localsearch.enable = false;
   };
 
   # XFCE and xserver config
@@ -58,7 +58,6 @@
   };
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -72,11 +71,6 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
-  };
-
-  sound.mediaKeys = {
-    enable = true;
-    volumeStep = "5%";
   };
 
   programs = {
