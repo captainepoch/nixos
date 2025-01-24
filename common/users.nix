@@ -29,7 +29,6 @@
       pinentry-gtk2
       senpai
       telegram-desktop
-      transmission_4-qt
       unzip
       winbox4
       zip

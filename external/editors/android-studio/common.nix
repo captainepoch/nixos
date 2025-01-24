@@ -1,4 +1,4 @@
-{ channel, pname, version, sha256Hash }:
+{ channel, pname, version, sha256Hash, }:
 
 { alsa-lib, runtimeShell, buildFHSEnv, cacert, coreutils, dbus, e2fsprogs, expat
 , fetchurl, findutils, file, fontsConf, git, gnugrep, gnused, gnutar, gtk2, glib
@@ -8,11 +8,11 @@
 , libXcomposite, libXcursor, libXdamage, libXext, libXfixes, libXi, libXrandr
 , libXrender, libXtst, makeWrapper, ncurses5, nspr, nss_latest, pciutils
 , pkgsi686Linux, ps, setxkbmap, lib, stdenv, systemd, unzip, usbutils, which
-, runCommand, wayland, xkeyboard_config, xorg, zlib, makeDesktopItem
-, tiling_wm # if we are using a tiling wm, need to set _JAVA_AWT_WM_NONREPARENTING in wrapper
-, androidenv
+, runCommand, wayland, xkeyboard_config, xorg, zlib, makeDesktopItem, tiling_wm
+, # if we are using a tiling wm, need to set _JAVA_AWT_WM_NONREPARENTING in wrapper
+androidenv,
 
-, forceWayland ? false }:
+forceWayland ? false, }:
 
 let
   drvName = "android-studio-${channel}-${version}";
@@ -81,7 +81,7 @@ let
             e2fsprogs
 
             # Gradle wants libstdc++.so.6
-            stdenv.cc.cc.lib
+            (lib.getLib stdenv.cc.cc)
             # mksdcard wants 32 bit libstdc++.so.6
             pkgsi686Linux.stdenv.cc.cc.lib
 
@@ -155,7 +155,8 @@ let
   # (e.g. `mksdcard`) have `/lib/ld-linux.so.2` set as the interpreter. An FHS
   # environment is used as a work around for that.
   fhsEnv = buildFHSEnv {
-    name = "${drvName}-fhs-env";
+    pname = "${drvName}-fhs-env";
+    inherit version;
     multiPkgs = pkgs: [
       ncurses5
 
@@ -166,7 +167,7 @@ let
       '')
     ];
   };
-  mkAndroidStudioWrapper = { androidStudio, androidSdk ? null }:
+  mkAndroidStudioWrapper = { androidStudio, androidSdk ? null, }:
     runCommand drvName {
       startScript = let
         hasAndroidSdk = androidSdk != null;
@@ -248,6 +249,7 @@ let
             dev = stable;
           }."${channel}";
         mainProgram = pname;
+        sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
       };
     } ''
       mkdir -p $out/{bin,share/pixmaps}

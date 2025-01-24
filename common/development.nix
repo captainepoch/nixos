@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.92.2.24228"; # Latest GitHub release
+      version = "1.96.4.25017"; # Latest GitHub release
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.92.2.24228/VSCodium-linux-x64-1.92.2.24228.tar.gz";
-        hash = "sha256-5aOqIJYWqecdVrnKCtT9nD35BYvEzU9nqogFgyW2reE=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.96.4.25017/VSCodium-linux-x64-1.96.4.25017.tar.gz";
+        hash = "sha256-xbeFVssGdPp94ONJwTrbwgKOYID9BNfD/xqO1UFCHNE=";
       };
     });
   };
@@ -51,35 +51,29 @@
           bungcip.better-toml
           esbenp.prettier-vscode
           golang.go
+          ms-python.flake8
           ms-python.isort
           ms-python.python
-          # ms-vscode.cpptools
           ms-vscode-remote.remote-containers
-          stkb.rewrap
+          samuelcolvin.jinjahtml
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2024.1.11501016";
-            sha256 = "sha256-1BYndKdICsHqxfe3ghJIpPrCTswYV3Ij+4U4fdICODE=";
-          }
-          {
-            name = "flake8";
-            publisher = "ms-python";
-            version = "2023.13.12291011";
-            sha256 = "sha256-xhAnRpgHiXb4DiY+tKRYvYMRWD8jHeq9lulqfLZ7Yq0=";
-          }
-          {
-            name = "jinjahtml";
-            publisher = "samuelcolvin";
-            version = "0.20.0";
-            sha256 = "sha256-wADL3AkLfT2N9io8h6XYgceKyltJCz5ZHZhB14ipqpM=";
+            version = "2024.1.13171014";
+            sha256 = "sha256-TMbSKa/7XmnHCHgjC2RQ6OppV7UvdZ4vCOSYixETVok=";
           }
           {
             name = "language-gettext";
             publisher = "mrorz";
             version = "0.5.0";
             sha256 = "sha256-1hdT2Fai0o48ojNqsjW+McokD9Nzt2By3vzhGUtgaeA=";
+          }
+          {
+            name = "rewrap-revived";
+            publisher = "dnut";
+            version = "17.8.0";
+            sha256 = "sha256-d0SjewsL1J0dui5/yCaZNI9Zw2xAh8lEJcD6eT347vk=";
           }
           {
             name = "sass-indented";
@@ -96,8 +90,8 @@
           {
             name = "vscode-clangd";
             publisher = "llvm-vs-code-extensions";
-            version = "0.1.29";
-            sha256 = "sha256-ldvjDwWmOI2BXr4VjqsSMbA1nv5rc6a9bveO8fm8ee8=";
+            version = "0.1.33";
+            sha256 = "sha256-NAQ7qT99vudcb/R55pKY3M5H6sV32aB4P8IWZKVQJas=";
           }
         ];
     })
