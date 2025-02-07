@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.96.4.25026"; # Latest GitHub release
+      version = "1.97.0.25037"; # Latest GitHub release
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.96.4.25026/VSCodium-linux-x64-1.96.4.25026.tar.gz";
-        hash = "sha256-yH3ZaBpGts9pzBZezqu9gJh/Fkn6aV1mpAMctNKisSQ=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.97.0.25037/VSCodium-linux-x64-1.97.0.25037.tar.gz";
+        hash = "sha256-KmU44ORDUlKIwREdWeN+RBLmiB078vOSM2TCcxA+P5Q=";
       };
     });
   };
@@ -60,8 +60,8 @@
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2024.1.13171014";
-            sha256 = "sha256-TMbSKa/7XmnHCHgjC2RQ6OppV7UvdZ4vCOSYixETVok=";
+            version = "2024.2.0";
+            sha256 = "sha256-wTu1NphGoecl4kWNGJBK4RyldoEaWcN01v6zD0g2Zh8=";
           }
           {
             name = "language-gettext";
@@ -78,8 +78,8 @@
           {
             name = "sass-indented";
             publisher = "syler";
-            version = "1.8.31";
-            sha256 = "sha256-TmRPpDJsuJETOKIjTsHzy4LOPTOAg4q0DunLyv6FxhQ=";
+            version = "1.8.32";
+            sha256 = "sha256-Y0G2pDKC/gOJSoLzDqvC2+xhc7EcjnzikVv8KbzBA8o=";
           }
           {
             name = "vscode-astyle";
