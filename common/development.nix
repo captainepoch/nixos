@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.97.0.25037"; # Latest GitHub release
+      version = "1.97.2.25045"; # Latest GitHub release
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.97.0.25037/VSCodium-linux-x64-1.97.0.25037.tar.gz";
-        hash = "sha256-KmU44ORDUlKIwREdWeN+RBLmiB078vOSM2TCcxA+P5Q=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.97.2.25045/VSCodium-linux-x64-1.97.2.25045.tar.gz";
+        hash = "sha256-qgJIN1oHDEnPyeHJcf91j7E3AXf2HOZXBQQjXmJwp5M=";
       };
     });
   };
@@ -51,6 +51,7 @@
           bungcip.better-toml
           esbenp.prettier-vscode
           golang.go
+          llvm-vs-code-extensions.vscode-clangd
           ms-python.flake8
           ms-python.isort
           ms-python.python
@@ -60,8 +61,8 @@
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2024.2.0";
-            sha256 = "sha256-wTu1NphGoecl4kWNGJBK4RyldoEaWcN01v6zD0g2Zh8=";
+            version = "2025.2.0";
+            sha256 = "sha256-N1ryz3MieHinTcm5d1RVbGApMQAUhrDUpxDUdfEDmvU=";
           }
           {
             name = "language-gettext";
@@ -78,20 +79,14 @@
           {
             name = "sass-indented";
             publisher = "syler";
-            version = "1.8.32";
-            sha256 = "sha256-Y0G2pDKC/gOJSoLzDqvC2+xhc7EcjnzikVv8KbzBA8o=";
+            version = "1.8.33";
+            sha256 = "sha256-7+Yo6X+t56tnZzepBKEo5hJdgLxiF3+83hSFqpkhVpA=";
           }
           {
             name = "vscode-astyle";
             publisher = "chiehyu";
             version = "0.9.0";
             sha256 = "sha256-eEuqMQ9+N91ByuLPAoLvcg7m9MEkENP3hsKVyskrSZQ=";
-          }
-          {
-            name = "vscode-clangd";
-            publisher = "llvm-vs-code-extensions";
-            version = "0.1.33";
-            sha256 = "sha256-NAQ7qT99vudcb/R55pKY3M5H6sV32aB4P8IWZKVQJas=";
           }
         ];
     })
