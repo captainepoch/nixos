@@ -18,6 +18,7 @@
       gopass
       htop
       isync
+      librewolf
       libsecret
       msmtp
       mumble

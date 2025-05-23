@@ -242,15 +242,21 @@ let
         # binaries are also distributed as proprietary software (unlike the
         # source-code itself).
         platforms = [ "x86_64-linux" ];
-        maintainers = with lib.maintainers;
-          rec {
-            stable = [ alapshin johnrtitor numinit ];
-            beta = stable;
-            canary = stable;
-            dev = stable;
-          }."${channel}";
+        maintainers = rec {
+          stable = with lib.maintainers; [ alapshin ];
+          beta = stable;
+          canary = stable;
+          dev = stable;
+        }."${channel}";
+        teams = rec {
+          stable = with lib.teams; [ android ];
+          beta = stable;
+          canary = stable;
+          dev = stable;
+        }."${channel}";
         mainProgram = pname;
         sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+        position = "pkgs/applications/editors/android-studio/common.nix:303";
       };
     } ''
       mkdir -p $out/{bin,share/pixmaps}

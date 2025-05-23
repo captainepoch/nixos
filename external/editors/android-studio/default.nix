@@ -1,4 +1,4 @@
-{ callPackage, makeFontsConf, buildFHSEnv, tiling_wm ? false }:
+{ callPackage, makeFontsConf, buildFHSEnv, tiling_wm ? false, }:
 
 let
   mkStudio = opts:
@@ -8,17 +8,17 @@ let
       inherit tiling_wm;
     };
   stableVersion = {
-    version = "2024.3.1.13"; # "Android Studio Meerkat | 2024.3.1"
-    sha256Hash = "sha256-4zJeoD5Fd4KgCt/oNzxhBwYeHuHBgmmAeFTIfZCElRA=";
+    version = "2024.3.2.14"; # "Android Studio Meerkat Feature Drop | 2024.3.2"
+    sha256Hash = "sha256-LHtPAJe4Zo2FcYwO0j51vt8QUNPQ2Dwf2UT7H72DyKU=";
   };
   betaVersion = {
-    version = "2024.3.1.12"; # "Android Studio Meerkat | 2024.3.1 RC 2"
-    sha256Hash = "sha256-gi7kaB4cPnnYqHJcoeKdQ6+InIzW1kaX5kBuKR48u+Q=";
+    version =
+      "2024.3.2.13"; # "Android Studio Meerkat Feature Drop | 2024.3.2 RC 4"
+    sha256Hash = "sha256-tPRTDFyKGPR1DKuJRBcwjWjNxylS/8Zv/Nd6vBmcujg=";
   };
   latestVersion = {
-    version =
-      "2024.3.2.7"; # "Android Studio Meerkat Feature Drop | 2024.3.2 Canary 7"
-    sha256Hash = "sha256-RENjqoPdq3iYrF1q8QcjrXVBG8xNQrV+Vq9dj0Z/Im8=";
+    version = "2025.1.1.9"; # "Android Studio Narwhal | 2025.1.1 Canary 9"
+    sha256Hash = "sha256-4xgaGqVAK7Lrk6IleeekupApJZVNhNmCzSacHzr47f8=";
   };
 in {
   # Attributes are named by their corresponding release channels

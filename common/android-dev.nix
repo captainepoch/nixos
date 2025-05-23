@@ -10,10 +10,5 @@ in {
       pkgs.android-tools.overrideAttrs (oldAttrs: { version = "35.0.1"; });
   };
 
-  environment.systemPackages = with pkgs; [
-    android-studio
-    android-tools
-
-    scrcpy
-  ];
+  environment.systemPackages = with pkgs; [ android-studio android-tools ];
 }

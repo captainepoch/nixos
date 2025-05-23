@@ -2,13 +2,13 @@
 
 {
   nixpkgs.config.packageOverrides = pkgs: {
-    # VSCodium
+    # VSCodium (Latest GitHub release)
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.98.2.25078"; # Latest GitHub release
+      version = "1.100.23258";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.98.2.25078/VSCodium-linux-x64-1.98.2.25078.tar.gz";
-        hash = "sha256-qiSCrPScPtfoxVXpjapOUqzIAHlNsXwVAZNYN6CeuQo=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.100.23258/VSCodium-linux-x64-1.100.23258.tar.gz";
+        hash = "sha256-6/ECgQbl7r4KI66BApOijIdJJP4nlDEgRE1JEMJcSDk=";
       };
     });
   };
@@ -22,6 +22,7 @@
     gdb
     gnumake
     go
+    kdePackages.kate
     lazygit
     libvirt
     lldb
@@ -48,7 +49,7 @@
           arrterian.nix-env-selector
           bbenoist.nix
           brettm12345.nixfmt-vscode
-          bungcip.better-toml
+          tamasfe.even-better-toml
           esbenp.prettier-vscode
           golang.go
           llvm-vs-code-extensions.vscode-clangd
@@ -61,8 +62,8 @@
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2025.2.0";
-            sha256 = "sha256-N1ryz3MieHinTcm5d1RVbGApMQAUhrDUpxDUdfEDmvU=";
+            version = "2025.3.11051009";
+            sha256 = "sha256-k0pNrwYRmt1LAnVDaYh0SkTuy6ctuqLCFJ56QDH57AQ=";
           }
           {
             name = "language-gettext";
@@ -73,8 +74,8 @@
           {
             name = "rewrap-revived";
             publisher = "dnut";
-            version = "17.8.0";
-            sha256 = "sha256-d0SjewsL1J0dui5/yCaZNI9Zw2xAh8lEJcD6eT347vk=";
+            version = "17.9.0";
+            sha256 = "sha256-au71N3gVDMKnTX9TXzGt9q4b3OM7s8gMHXBnIVZ/1CE=";
           }
           {
             name = "sass-indented";
