@@ -1,16 +1,16 @@
 { config, lib, pkgs, ... }:
 
 {
+  # Audio by Bluetooth
+  services.pulseaudio = {
+    package = pkgs.pulseaudioFull;
+    extraConfig = "load-module module-switch-on-connect";
+  };
   hardware = {
     # Enables support for BT
     bluetooth.enable = true;
     # Powers up the default Bluetooth controller on boot
     bluetooth.powerOnBoot = true;
-    # Audio by Bluetooth
-    pulseaudio = {
-      package = pkgs.pulseaudioFull;
-      extraConfig = "load-module module-switch-on-connect";
-    };
     # A2DP
     bluetooth.settings = {
       General = { Enable = "Source,Sink,Media,Socket"; };

@@ -8,7 +8,6 @@
     # luanti
     lutris
     prismlauncher
-    xboxdrv
     xorg.xinput
     wine
   ];
