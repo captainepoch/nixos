@@ -3,7 +3,7 @@
 { alsa-lib, runtimeShell, buildFHSEnv, cacert, coreutils, dbus, e2fsprogs, expat
 , fetchurl, findutils, file, fontsConf, git, gnugrep, gnused, gnutar, gtk2, glib
 , gzip, fontconfig, freetype, libbsd, libpulseaudio, libGL, libdrm, libpng
-, libuuid, libX11, libxcb, libxkbcommon, mesa-demos, xcbutilwm
+, libuuid, libsecret, libX11, libxcb, libxkbcommon, mesa-demos, xcbutilwm
 , xcbutilrenderutil, xcbutilkeysyms, xcbutilimage, xcbutilcursor, libxkbfile
 , libXcomposite, libXcursor, libXdamage, libXext, libXfixes, libXi, libXrandr
 , libXrender, libXtst, makeWrapper, ncurses5, nspr, nss_latest, pciutils
@@ -64,6 +64,7 @@ let
             git
             ps
             usbutils
+            libsecret
           ]
         }" \
         --prefix LD_LIBRARY_PATH : "${
@@ -76,6 +77,7 @@ let
             libXi
             libXrender
             libXtst
+            libsecret
 
             # No crash, but attempted to load at startup
             e2fsprogs
@@ -256,7 +258,6 @@ let
         }."${channel}";
         mainProgram = pname;
         sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-        position = "pkgs/applications/editors/android-studio/common.nix:303";
       };
     } ''
       mkdir -p $out/{bin,share/pixmaps}
