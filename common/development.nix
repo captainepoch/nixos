@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium (Latest GitHub release)
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.100.23258";
+      version = "1.101.24242";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.100.23258/VSCodium-linux-x64-1.100.23258.tar.gz";
-        hash = "sha256-6/ECgQbl7r4KI66BApOijIdJJP4nlDEgRE1JEMJcSDk=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.101.24242/VSCodium-linux-x64-1.101.24242.tar.gz";
+        hash = "sha256-IDLwjwstwKc2xSWvY499+Hf6cLORnhD9H3OGPH0XEUo=";
       };
     });
   };
@@ -62,8 +62,8 @@
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2025.3.11051009";
-            sha256 = "sha256-k0pNrwYRmt1LAnVDaYh0SkTuy6ctuqLCFJ56QDH57AQ=";
+            version = "2025.3.11811013";
+            sha256 = "sha256-Vd9Au94dUXDv84vb22jM47wwuG3jG5R8701oQqLo0d4=";
           }
           {
             name = "language-gettext";

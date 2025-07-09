@@ -15,10 +15,10 @@
     # GPG stuff
     pinentry-gnome3
     # XFCE
-    xfce.thunar-archive-plugin
-    xfce.thunar-volman
+    #xfce.thunar-archive-plugin
+    #xfce.thunar-volman
     xfce.xfce4-icon-theme
-    xfce.xfce4-pulseaudio-plugin
+    #xfce.xfce4-pulseaudio-plugin
   ];
 
   fonts = {
@@ -56,6 +56,15 @@
     displayManager.lightdm.enable = true;
     dpi = 96;
   };
+
+  ## Thumbnail support for images
+  services.tumbler.enable = true;
+
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+    xfce4-pulseaudio-plugin
+  ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
