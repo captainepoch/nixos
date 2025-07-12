@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium (Latest GitHub release)
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.101.24242";
+      version = "1.102.04606";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.101.24242/VSCodium-linux-x64-1.101.24242.tar.gz";
-        hash = "sha256-IDLwjwstwKc2xSWvY499+Hf6cLORnhD9H3OGPH0XEUo=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.102.04606/VSCodium-linux-x64-1.102.04606.tar.gz";
+        hash = "sha256-mVJUlPqbJkw4qr/5E0r23Lb/Psh1Tx0Vw2eM7hGdsaQ=";
       };
     });
   };
@@ -53,6 +53,7 @@
           esbenp.prettier-vscode
           golang.go
           llvm-vs-code-extensions.vscode-clangd
+          mkhl.direnv
           ms-python.flake8
           ms-python.isort
           ms-python.python
