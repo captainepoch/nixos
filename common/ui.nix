@@ -15,10 +15,7 @@
     # GPG stuff
     pinentry-gnome3
     # XFCE
-    #xfce.thunar-archive-plugin
-    #xfce.thunar-volman
     xfce.xfce4-icon-theme
-    #xfce.xfce4-pulseaudio-plugin
   ];
 
   fonts = {
@@ -68,20 +65,15 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  security.rtkit.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
+  # SSH and GPG config
   programs = {
     dconf.enable = true;
     ssh.startAgent = false;

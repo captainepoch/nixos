@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium (Latest GitHub release)
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.102.04606";
+      version = "1.102.24914";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.102.04606/VSCodium-linux-x64-1.102.04606.tar.gz";
-        hash = "sha256-mVJUlPqbJkw4qr/5E0r23Lb/Psh1Tx0Vw2eM7hGdsaQ=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.102.24914/VSCodium-linux-x64-1.102.24914.tar.gz";
+        hash = "sha256-ihRG4CNWFJ9E+F4cVm9ZWLyssY24POgAePf91cFaj6U=";
       };
     });
   };
@@ -59,6 +59,8 @@
           ms-python.python
           ms-vscode-remote.remote-containers
           samuelcolvin.jinjahtml
+          twxs.cmake
+          xaver.clang-format
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
             name = "autopep8";

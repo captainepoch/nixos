@@ -7,7 +7,7 @@
     description = "Adolph";
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "audio" "networkmanager" "wheel" "plugdev" "dialout" ];
+    extraGroups = [ "audio" "dialout" "networkmanager" "plugdev" "wheel" ];
     shell = "${pkgs.zsh}/bin/zsh";
     packages = with pkgs; [
       brave
