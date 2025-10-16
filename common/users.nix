@@ -1,6 +1,9 @@
 { config, pkgs, lib, options, ... }:
 
 {
+  # Nheko
+  nixpkgs.config.permittedInsecurePackages = [ "olm-3.2.16" ];
+
   programs.zsh.enable = true;
 
   users.extraUsers.epoch = {
@@ -12,7 +15,6 @@
     packages = with pkgs; [
       brave
       calibre
-      element-desktop
       exiftool
       gimp
       gopass
@@ -25,6 +27,7 @@
       neomutt
       neovim
       nextcloud-client
+      nheko
       obsidian
       pavucontrol
       pinentry-gtk2

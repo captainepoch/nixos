@@ -6,6 +6,7 @@
     package = pkgs.pulseaudioFull;
     extraConfig = "load-module module-switch-on-connect";
   };
+
   hardware = {
     # Enables support for BT
     bluetooth.enable = true;
@@ -17,7 +18,7 @@
     };
   };
 
-  services.blueman.enable = true;
+  services.blueman = { enable = true; };
 
   # Media keys on headsets
   systemd.user.services.mpris-proxy = {

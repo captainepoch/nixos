@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium (Latest GitHub release)
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.102.24914";
+      version = "1.105.06922";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.102.24914/VSCodium-linux-x64-1.102.24914.tar.gz";
-        hash = "sha256-ihRG4CNWFJ9E+F4cVm9ZWLyssY24POgAePf91cFaj6U=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.105.06922/VSCodium-linux-x64-1.105.06922.tar.gz";
+        hash = "sha256-KiptWIiHszpegIxyefzw7KFnMBq4iD5LanEml5UQyFA=";
       };
     });
   };
@@ -22,6 +22,7 @@
     gdb
     gnumake
     go
+    hunspell
     kdePackages.kate
     lazygit
     libvirt
