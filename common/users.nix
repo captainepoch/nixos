@@ -38,4 +38,6 @@
       zip
     ];
   };
+
+  environment.sessionVariables = { "GDK_DISABLE" = "gles-api"; };
 }
