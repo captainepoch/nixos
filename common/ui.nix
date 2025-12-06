@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     kdePackages.ark
-    libsForQt5.okular
+    kdePackages.okular
     libreoffice
     xarchiver
     # Keyring
@@ -20,7 +20,7 @@
 
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [ liberation_ttf noto-fonts noto-fonts-emoji ];
+    packages = with pkgs; [ liberation_ttf noto-fonts noto-fonts-color-emoji ];
 
     fontconfig = {
       defaultFonts = {
