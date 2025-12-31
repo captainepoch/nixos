@@ -13,12 +13,13 @@
     man-pages
     man-pages-posix
     os-prober
-    vim
     wget
   ];
 
   # Enable flakes (experimental)
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Allow unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
 
   # Ensure that the TTY has the same layout as the X server
@@ -32,7 +33,7 @@
     defaultLocale = "es_ES.UTF-8";
     extraLocaleSettings = {
       LANGUAGE = "en_US.UTF-8";
-      LC_ALL = "en_GB.UTF-8";
+      LC_ALL = "es_ES.UTF-8";
       LC_ADDRESS = "es_ES.UTF-8";
       LC_IDENTIFICATION = "es_ES.UTF-8";
       LC_MEASUREMENT = "es_ES.UTF-8";
@@ -43,12 +44,7 @@
       LC_TELEPHONE = "es_ES.UTF-8";
       LC_TIME = "es_ES.UTF-8";
     };
-    supportedLocales = [
-      "C.UTF-8/UTF-8"
-      "es_ES.UTF-8/UTF-8"
-      "en_US.UTF-8/UTF-8"
-      "en_GB.UTF-8/UTF-8"
-    ];
+    extraLocales = [ "C.UTF-8/UTF-8" "es_ES.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
 
   # Optimize the nix store by default for new derivations
@@ -62,3 +58,6 @@
 
   hardware.enableRedistributableFirmware = true;
 }
+
+## Establish browser by default
+# $ xdg-settings set default-web-browser librewolf.desktop

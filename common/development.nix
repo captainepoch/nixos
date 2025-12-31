@@ -16,14 +16,12 @@
   environment.systemPackages = with pkgs; [
     astyle
     direnv
-    emacs
-    emacs-all-the-icons-fonts
     gcc_latest
     gdb
     gnumake
     go
     hunspell
-    kdePackages.kate
+    hunspellDicts.es_ES
     lazygit
     libvirt
     lldb

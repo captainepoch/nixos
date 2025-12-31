@@ -6,24 +6,26 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/6c6a8ee9-8d4f-4c50-8107-8ab925f945ef";
-    fsType = "ext4";
-  };
-
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/76202663-f559-45f2-879e-67cf279da9b0";
+    device = "/dev/disk/by-uuid/c4899a0e-6546-4ee9-ab67-4fc69dce0ee3";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/BDFD-8039";
+    device = "/dev/disk/by-uuid/DBDE-A577";
     fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/ef6f1313-9d69-4df7-b476-84415301f74c";
+    fsType = "ext4";
   };
 
   swapDevices = lib.mkForce [ ];

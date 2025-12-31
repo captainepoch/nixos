@@ -13,10 +13,7 @@
     extraGroups = [ "audio" "dialout" "networkmanager" "plugdev" "wheel" ];
     shell = "${pkgs.zsh}/bin/zsh";
     packages = with pkgs; [
-      brave
-      calibre
       exiftool
-      gimp
       gopass
       htop
       isync
@@ -28,9 +25,7 @@
       neovim
       nextcloud-client
       nheko
-      obsidian
       pavucontrol
-      pinentry-gtk2
       senpai
       telegram-desktop
       unzip

@@ -2,6 +2,9 @@
 
 {
   boot = {
+    # Use the latest kernel
+    kernelPackages = pkgs.linuxPackages_latest;
+
     loader.efi = {
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot";

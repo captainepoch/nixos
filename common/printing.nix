@@ -7,10 +7,6 @@
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
-    publish = {
-      enable = true;
-      userServices = true;
-    };
   };
 
   services.printing = {
@@ -18,7 +14,7 @@
     browsing = true;
     defaultShared = true;
     openFirewall = true;
-    drivers = with pkgs; [ brlaser cups-filters cups-browsed gutenprint ];
+    drivers = with pkgs; [ brlaser cups-browsed cups-filters gutenprint ];
   };
 
   hardware.printers = {

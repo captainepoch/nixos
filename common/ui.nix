@@ -6,17 +6,23 @@
     kdePackages.okular
     libreoffice
     xarchiver
-    # Keyring
-    gnome-keyring
-    libgnome-keyring
+    # GPG stuff
+    pinentry-gnome3
     # GTK Theme & Icons
     matcha-gtk-theme
     papirus-icon-theme
-    # GPG stuff
-    pinentry-gnome3
+    # Keyring
+    gnome-keyring
+    libgnome-keyring
     # XFCE
     xfce.xfce4-icon-theme
+    xorg.xrdb
+    xsettingsd
   ];
+
+  environment.xfce.excludePackages = with pkgs.xfce; [ parole ];
+
+  services.xserver.excludePackages = with pkgs; [ xterm ];
 
   fonts = {
     fontDir.enable = true;
@@ -43,13 +49,20 @@
   services.xserver = {
     enable = true;
 
-    xkb.layout = "es";
+    xkb = {
+      layout = "es";
+      variant = "";
+    };
 
     deviceSection = ''
       Option "TearFree" "true"
     '';
 
-    desktopManager.xfce.enable = true;
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+    };
+
     displayManager.lightdm.enable = true;
     dpi = 96;
   };
@@ -63,7 +76,7 @@
     xfce4-pulseaudio-plugin
   ];
 
-  # Enable sound with pipewire.
+  # Enable sound with pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = false;
   services.pipewire = {

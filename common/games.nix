@@ -5,7 +5,6 @@
     builtins.elem (lib.getName pkg) [ "steam" "steam-original" "steam-run" ];
 
   environment.systemPackages = with pkgs; [
-    # luanti
     lutris
     prismlauncher
     xorg.xinput

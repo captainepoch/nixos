@@ -13,10 +13,10 @@
   };
 
   # List packages installed in system profile. To search, run:
-  environment.variables.EDITOR = "nano";
+  environment.variables.EDITOR = "nvim";
 
   # Supposedly better for the SSD.
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "25.11";
 }
