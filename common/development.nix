@@ -30,15 +30,15 @@
 
     (python3.withPackages (ps:
       with ps; [
-        tkinter
-        scapy
-        pytest
         autoflake
-        python-lsp-server
-        pylint
-        yapf
         importmagic
+        pylint
+        pytest
+        python-lsp-server
+        scapy
+        tkinter
         virtualenv
+        yapf
       ]))
 
     (vscode-with-extensions.override {
@@ -64,8 +64,8 @@
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2025.3.11811013";
-            sha256 = "sha256-Vd9Au94dUXDv84vb22jM47wwuG3jG5R8701oQqLo0d4=";
+            version = "2025.3.13231724";
+            sha256 = "sha256-f2XfUincaNNClmP4pLnmIbYpgqINpJqa2WcHbKC6GOg=";
           }
           {
             name = "language-gettext";
@@ -84,12 +84,6 @@
             publisher = "syler";
             version = "1.8.33";
             sha256 = "sha256-7+Yo6X+t56tnZzepBKEo5hJdgLxiF3+83hSFqpkhVpA=";
-          }
-          {
-            name = "vscode-astyle";
-            publisher = "chiehyu";
-            version = "0.9.0";
-            sha256 = "sha256-eEuqMQ9+N91ByuLPAoLvcg7m9MEkENP3hsKVyskrSZQ=";
           }
         ];
     })

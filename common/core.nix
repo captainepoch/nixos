@@ -16,9 +16,6 @@
     wget
   ];
 
-  # Enable flakes (experimental)
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Allow unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
 
@@ -46,9 +43,6 @@
     };
     extraLocales = [ "C.UTF-8/UTF-8" "es_ES.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
-
-  # Optimize the nix store by default for new derivations
-  nix.settings.auto-optimise-store = true;
 
   # Enable regular garbage collection from the nix-store
   nix.gc = {
