@@ -29,6 +29,7 @@
       senpai
       telegram-desktop
       unzip
+      vlc
       winbox4
       zip
     ];
