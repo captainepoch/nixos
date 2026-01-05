@@ -4,12 +4,16 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium (Latest GitHub release)
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.106.37943";
+      version = "1.107.18627";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.106.37943/VSCodium-linux-x64-1.106.37943.tar.gz";
-        hash = "sha256-P71aeIViaqSoMpfgtKPZAsclsWdBIvM9DvAoY8cm5Ow=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.107.18627/VSCodium-linux-x64-1.107.18627.tar.gz";
+        hash = "sha256-gqBxdd6Ww1nIXovixgsuIivLXn1LoZXN5NhK4bLmSng=";
       };
+
+      postFixup = (oldAttrs.postFixup or "") + ''
+        rm -rf $out/lib/vscode/resources/app/extensions/microsoft-authentication
+      '';
     });
   };
 
