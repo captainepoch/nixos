@@ -1,4 +1,10 @@
-{ config, pkgs, lib, options, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  options,
+  ...
+}:
 
 {
   # Nheko
@@ -10,12 +16,19 @@
     description = "Adolph";
     isNormalUser = true;
     uid = 1000;
-    extraGroups = [ "audio" "dialout" "networkmanager" "plugdev" "wheel" ];
+    extraGroups = [
+      "audio"
+      "dialout"
+      "networkmanager"
+      "plugdev"
+      "wheel"
+    ];
     shell = "${pkgs.zsh}/bin/zsh";
     packages = with pkgs; [
+      brave
+      btop
       exiftool
       gopass
-      htop
       isync
       librewolf
       libsecret
@@ -25,6 +38,7 @@
       neovim
       nextcloud-client
       nheko
+      obsidian
       pavucontrol
       senpai
       telegram-desktop
@@ -35,5 +49,7 @@
     ];
   };
 
-  environment.sessionVariables = { "GDK_DISABLE" = "gles-api"; };
+  environment.sessionVariables = {
+    "GDK_DISABLE" = "gles-api";
+  };
 }

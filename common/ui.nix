@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -15,18 +20,22 @@
     gnome-keyring
     libgnome-keyring
     # XFCE
-    xfce.xfce4-icon-theme
-    xorg.xrdb
+    xfce4-icon-theme
+    xrdb
     xsettingsd
   ];
 
-  environment.xfce.excludePackages = with pkgs.xfce; [ parole ];
+  environment.xfce.excludePackages = with pkgs; [ parole ];
 
   services.xserver.excludePackages = with pkgs; [ xterm ];
 
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [ liberation_ttf noto-fonts noto-fonts-color-emoji ];
+    packages = with pkgs; [
+      liberation_ttf
+      noto-fonts
+      noto-fonts-color-emoji
+    ];
 
     fontconfig = {
       defaultFonts = {
@@ -70,7 +79,7 @@
   ## Thumbnail support for images
   services.tumbler.enable = true;
 
-  programs.thunar.plugins = with pkgs.xfce; [
+  programs.thunar.plugins = with pkgs; [
     thunar-archive-plugin
     thunar-volman
     xfce4-pulseaudio-plugin
