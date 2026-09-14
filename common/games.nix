@@ -4,12 +4,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "steam" "steam-original" "steam-run" ];
 
-  environment.systemPackages = with pkgs; [
-    lutris
-    prismlauncher
-    xorg.xinput
-    wine
-  ];
+  environment.systemPackages = with pkgs; [ lutris prismlauncher xinput wine ];
 
   programs.steam = {
     enable = true;

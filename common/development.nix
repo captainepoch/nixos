@@ -4,11 +4,11 @@
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium (Latest GitHub release)
     vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.107.18627";
+      version = "1.121.03429";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.107.18627/VSCodium-linux-x64-1.107.18627.tar.gz";
-        hash = "sha256-gqBxdd6Ww1nIXovixgsuIivLXn1LoZXN5NhK4bLmSng=";
+          "https://github.com/VSCodium/vscodium/releases/download/1.121.03429/VSCodium-linux-x64-1.121.03429.tar.gz";
+        hash = "sha256-LJsGc11MH6zlcJNfSWjTWPn2Jp9dkjeBPQuCXH1woUM=";
       };
 
       postFixup = (oldAttrs.postFixup or "") + ''
@@ -29,8 +29,8 @@
     lazygit
     libvirt
     lldb
+    nixfmt
     nix-direnv
-    nixfmt-classic
 
     (python3.withPackages (ps:
       with ps; [

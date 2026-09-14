@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.adb.enable = true;
+  environment.systemPackages = with pkgs; [ android-tools ];
 
-  users.extraUsers.epoch.extraGroups = [ "adbusers" "kvm" ];
+  users.extraUsers.epoch.extraGroups = [ "kvm" ];
 }

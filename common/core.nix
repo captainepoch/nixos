@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -12,7 +17,9 @@
     gparted
     man-pages
     man-pages-posix
+    pciutils
     os-prober
+    usbutils
     wget
   ];
 
@@ -41,7 +48,11 @@
       LC_TELEPHONE = "es_ES.UTF-8";
       LC_TIME = "es_ES.UTF-8";
     };
-    extraLocales = [ "C.UTF-8/UTF-8" "es_ES.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
+    extraLocales = [
+      "C.UTF-8/UTF-8"
+      "es_ES.UTF-8/UTF-8"
+      "en_US.UTF-8/UTF-8"
+    ];
   };
 
   # Enable regular garbage collection from the nix-store
