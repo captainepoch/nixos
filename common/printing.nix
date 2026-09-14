@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [ xsane ];
@@ -14,16 +19,21 @@
     browsing = true;
     defaultShared = true;
     openFirewall = true;
-    drivers = with pkgs; [ brlaser cups-browsed cups-filters gutenprint ];
+    drivers = with pkgs; [
+      brlaser
+      cups-browsed
+      cups-filters
+      gutenprint
+    ];
   };
 
-  hardware.printers = {
-    ensurePrinters = [{
-      name = "Brother_DCP-L2627DWE";
-      location = "Home";
-      deviceUri = "ipp://10.0.7.41/ipp/print";
-      model = "everywhere";
-    }];
-    ensureDefaultPrinter = "Brother_DCP-L2627DWE";
-  };
+  #hardware.printers = {
+  #  ensurePrinters = [{
+  #    name = "Brother_DCP-L2627DWE";
+  #    location = "Home";
+  #    deviceUri = "ipp://10.0.7.41/ipp/print";
+  #    model = "everywhere";
+  #  }];
+  #  ensureDefaultPrinter = "Brother_DCP-L2627DWE";
+  #};
 }

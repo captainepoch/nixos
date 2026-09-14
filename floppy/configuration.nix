@@ -1,4 +1,10 @@
-{ config, lib, pkgs, options, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  options,
+  ...
+}:
 
 {
   # Networking config
@@ -16,7 +22,11 @@
   environment.variables.EDITOR = "nvim";
 
   # Supposedly better for the SSD.
-  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
+  fileSystems."/".options = [
+    "noatime"
+    "nodiratime"
+    "discard"
+  ];
 
   system.stateVersion = "25.11";
 }

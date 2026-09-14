@@ -1,17 +1,27 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   nixpkgs.config.packageOverrides = pkgs: {
     # VSCodium (Latest GitHub release)
-    vscodium = pkgs.vscodium.overrideAttrs (oldAttrs: {
-      version = "1.107.18627";
+    vscodium = pkgs.vscodium.overrideAttrs (old: {
+      version = "1.143.17232";
       src = pkgs.fetchurl {
-        url =
-          "https://github.com/VSCodium/vscodium/releases/download/1.107.18627/VSCodium-linux-x64-1.107.18627.tar.gz";
-        hash = "sha256-gqBxdd6Ww1nIXovixgsuIivLXn1LoZXN5NhK4bLmSng=";
+        url = "https://github.com/VSCodium/vscodium/releases/download/1.143.17232/VSCodium-linux-x64-1.143.17232.tar.gz";
+        hash = "sha256-yhiVqgQL2RoJxwnXnqx4YtjBqgI3/cJbUD3uuLzYfv0=";
       };
 
-      postFixup = (oldAttrs.postFixup or "") + ''
+      postPatch =
+        builtins.replaceStrings
+          [ "resources/app/node_modules/@vscode/ripgrep/bin/rg" ]
+          [ "resources/app/node_modules/@vscode/ripgrep-universal/bin/linux-x64/rg" ]
+          old.postPatch;
+
+      postFixup = (old.postFixup or "") + ''
         rm -rf $out/lib/vscode/resources/app/extensions/microsoft-authentication
       '';
     });
@@ -29,11 +39,12 @@
     lazygit
     libvirt
     lldb
+    nixfmt
     nix-direnv
-    nixfmt-classic
+    ripgrep
 
-    (python3.withPackages (ps:
-      with ps; [
+    (python3.withPackages (
+      ps: with ps; [
         autoflake
         importmagic
         pylint
@@ -43,11 +54,13 @@
         tkinter
         virtualenv
         yapf
-      ]))
+      ]
+    ))
 
     (vscode-with-extensions.override {
       vscode = vscodium;
-      vscodeExtensions = with vscode-extensions;
+      vscodeExtensions =
+        with vscode-extensions;
         [
           arrterian.nix-env-selector
           bbenoist.nix
@@ -60,16 +73,17 @@
           ms-python.flake8
           ms-python.isort
           ms-python.python
-          ms-vscode-remote.remote-containers
+          #ms-vscode-remote.remote-containers
           samuelcolvin.jinjahtml
           twxs.cmake
           xaver.clang-format
-        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
             name = "autopep8";
             publisher = "ms-python";
-            version = "2025.3.13231724";
-            sha256 = "sha256-f2XfUincaNNClmP4pLnmIbYpgqINpJqa2WcHbKC6GOg=";
+            version = "2026.5.13011008";
+            sha256 = "sha256-cRwrlebS4Zihc9qSlOoZ+K0jdmvfPF42puKtnk5LswQ=";
           }
           {
             name = "language-gettext";
@@ -80,8 +94,8 @@
           {
             name = "rewrap-revived";
             publisher = "dnut";
-            version = "17.9.0";
-            sha256 = "sha256-au71N3gVDMKnTX9TXzGt9q4b3OM7s8gMHXBnIVZ/1CE=";
+            version = "18.4.1";
+            sha256 = "sha256-xGp7T5sKS/CS6Kf1yUICyDIhWFXWYsQskenJiogvglQ=";
           }
           {
             name = "sass-indented";
@@ -96,6 +110,6 @@
   # Java
   programs.java = {
     enable = true;
-    package = pkgs.openjdk17;
+    package = pkgs.openjdk21;
   };
 }
